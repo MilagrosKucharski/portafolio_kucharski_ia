@@ -14,6 +14,7 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
+  pathPrefix: `/portafolio_kucharski_ia`,
   plugins: [
     `gatsby-plugin-image`,
     {
