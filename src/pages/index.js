@@ -5,23 +5,7 @@ import Section from '../components/section';
 import Footer from '../components/footer';
 import { motion } from 'framer-motion'; 
 import '../styles/custom.css';
-//import missingValues1 from '/images/missing_values_1.png';
-/*import missingValues1 from '../../public/images/missing_values_1.png';
-import missingValues2 from '../../public/images/missing_values_2.png';
-import missingValues3 from '../../public/images/missing_values_3.png';
-import missingValues4 from '../../public/images/missing_values_4.png';
-import missingValues5 from '../../public/images/missing_values_5.png';
-import missingValues6 from '../../public/images/missing_values_6.png';
-import missingValues7 from '../../public/images/missing_values_7.png';
-import n_o_1 from '../../public/images/n_o_1.png';
-import n_o_2 from '../../public/images/n_o_2.png';
-import n_o_3 from '../../public/images/n_o_3.png';
-import n_o_4 from '../../public/images/n_o_4.png';
-import n_o_5 from '../../public/images/n_o_5.png';
-import n_o_6 from '../../public/images/n_o_6.png';
-import n_o_7 from '../../public/images/n_o_7.png';
-import n_o_8 from '../../../public/images/n_o_8.png';
-import n_o_9 from '/images/n_o_9.png';*/
+
 
 
 
@@ -453,7 +437,7 @@ const IndexPage = () => (
           Seleccionando el dataset <strong>Wine</strong> , observando las estadísticas de este, podemos ver que hay diferentes atributos numéricos pero en diferentes rangos y promedios.
       </div>
       <br />
-      <img src="/src/images/n_o_1.png" alt="Selección del dataset Wine" class="example-image" />
+      <img src="/images/n_o_1.png" alt="Selección del dataset Wine" class="example-image" />
       <br />
 
       <div class="list-text">
