@@ -629,37 +629,37 @@ const IndexPage = () => (
             <br />
             <div className="section-text">
                 En cuanto a los valores faltantes, tomé las siguientes decisiones: 
-                para el atributo <strong>contact</strong>, elegí eliminarlo usando el bloque <em>Select Attributes</em> (imagen 8). 
+                para el atributo <strong>contact</strong>, elegí eliminarlo usando el bloque <em>Select Attributes</em>. 
             </div>
             <br />
             <img src="/images/c_e_8.png" alt="Eliminación del atributo contact en RapidMiner" className="example-image" />
             <br />
             <div className="section-text">
-                Para el atributo <strong>education</strong>, decidí reemplazar los valores faltantes por el promedio (imagen 9). 
+                Para el atributo <strong>education</strong>, decidí reemplazar los valores faltantes por el promedio. 
             </div>
             <br />
             <img src="/images/c_e_9.png" alt="Reemplazo de valores faltantes en education por el promedio" className="example-image" />
             <br />
             <div className="section-text">
-                En cuanto a <strong>poutcome</strong>, me basé en la documentación y lo reemplacé por <em>'nonexistent'</em>, ya que este valor indica que no hubo un resultado previo de la campaña de marketing, lo cual es esencial para entender el contexto de los datos (imagen 10). 
+                En cuanto a <strong>poutcome</strong>, me basé en la documentación y lo reemplacé por <em>'nonexistent'</em>, ya que este valor indica que no hubo un resultado previo de la campaña de marketing, lo cual es esencial para entender el contexto de los datos. 
             </div>
             <br />
             <img src="/images/c_e_10.png" alt="Reemplazo de valores faltantes en poutcome por nonexistent" className="example-image" />
             <br />
             <div className="section-text">
-                Finalmente, como eran pocas las filas que tenían valores faltantes en <strong>job</strong>, decidí filtrarlas directamente (imagen 11). 
+                Finalmente, como eran pocas las filas que tenían valores faltantes en <strong>job</strong>, decidí filtrarlas directamente. 
             </div>
             <br />
             <img src="/images/c_e_11.png" alt="Filtrado de filas con valores faltantes en job" className="example-image" />
             <br />
             <div className="section-text">
-                Ahora podemos ver el dataset sin valores faltantes (imagen 12).
+                Ahora podemos ver el dataset sin valores faltantes.
             </div>
             <br />
             <img src="/images/c_e_12.png" alt="Dataset sin valores faltantes" className="example-image" />
             <br />
             <div className="section-text">
-                Ya con los datos pre-procesados, guardamos el proceso y creamos uno nuevo en donde volcaremos el recién guardado proceso. El algoritmo elegido es K-NN porque es sencillo de implementar, intuitivo y efectivo para problemas de clasificación como el nuestro, donde buscamos clasificar registros en dos categorías. Además, K-NN no hace suposiciones sobre la distribución de los datos, lo que lo hace versátil para diferentes tipos de conjuntos de datos.
+                Ya con los datos pre-procesados, guardamos el proceso y creamos uno nuevo en donde volcaremos el recién guardado proceso. El algoritmo elegido es K-NN porque es sencillo de implementar, intuitivo y efectivo para problemas de clasificación como el nuestro, donde buscamos clasificar registros en dos categorías.
             </div>
             <br />
             <img src="/images/c_e_13.png" alt="Exclusión de atributos innecesarios" className="example-image" />
@@ -701,13 +701,13 @@ const IndexPage = () => (
             <img src="/images/c_e_19.png" alt="Configuración de K-NN con k=10" className="example-image" />
             <br />
             <div className="section-text">
-                Este cambio en el parámetro \( k \) mejoró ligeramente la precisión del modelo, lo que indica que un mayor número de vecinos puede ayudar a suavizar las decisiones de clasificación en este conjunto de datos. Sin embargo, es importante considerar que aumentar \( k \) demasiado podría llevar a una pérdida de información relevante, especialmente en conjuntos de datos más complejos.
+                Este cambio en el parámetro  k mejoró ligeramente la precisión del modelo, lo que indica que un mayor número de vecinos puede ayudar a suavizar las decisiones de clasificación en este conjunto de datos. Sin embargo, es importante considerar que aumentar  k  demasiado podría llevar a una pérdida de información relevante, especialmente en conjuntos de datos más complejos.
             </div>
             <br />
             <img src="/images/c_e_20.png" alt="Matriz de confusión con exactitud" className="example-image" />
             <br />
             <div className="section-text">
-                En conclusión, el algoritmo K-NN se mostró efectivo para clasificar los datos, logrando una exactitud notable del 89.15% con \( k = 10 \). Este resultado sugiere que los datos están bien estructurados y que las características seleccionadas son relevantes para la tarea de clasificación. A pesar de que se podrían realizar más optimizaciones y pruebas con diferentes valores de \( k \) y técnicas de preprocesamiento, el rendimiento actual es prometedor y puede ser un buen punto de partida para análisis adicionales o implementación en entornos reales.
+                En conclusión, el algoritmo K-NN se mostró efectivo para clasificar los datos, logrando una exactitud notable del 89.15% con  k = 10 . Este resultado sugiere que los datos están bien estructurados y que las características seleccionadas son relevantes para la tarea de clasificación. A pesar de que se podrían realizar más optimizaciones y pruebas con diferentes valores de k  y técnicas de preprocesamiento, el rendimiento actual es prometedor y puede ser un buen punto de partida para análisis adicionales o implementación en entornos reales.
             </div>
         </Section>
 
