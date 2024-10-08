@@ -26,9 +26,9 @@ const MyNavbar = () => {
         <Nav.Link as={Button} variant="light" href="#data" className="btn-custom mx-1">
           Tratamiento de Datos
         </Nav.Link>
-        <Nav.Link as={Button} variant="light" href="#algorithms" className="btn-custom mx-1">
+        {/*<Nav.Link as={Button} variant="light" href="#algorithms" className="btn-custom mx-1">
           Algoritmos Lineales
-        </Nav.Link>
+        </Nav.Link>*/}
         <Nav.Link as={Button} variant="light" href="#case-study" className="btn-custom mx-1">
           Caso de Estudio
         </Nav.Link>

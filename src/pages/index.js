@@ -523,13 +523,209 @@ const IndexPage = () => (
 
     </Section>
 
-    <Section id="algorithms" title="Algoritmos Lineales">
+    {/*<Section id="algorithms" title="Algoritmos Lineales">
       <p>Aquí va el contenido sobre los algoritmos lineales...</p>
-    </Section>
+    </Section>*/}
 
     <Section id="case-study" title="Caso de Estudio">
-      <p>Aquí va el contenido del caso de estudio...</p>
-    </Section>
+            <h2 className="section-title">Descripción del problema</h2>
+            <br />
+            <div className="section-text">
+                El conjunto de datos que estoy utilizando proviene de una campaña de marketing directo de una institución bancaria portuguesa. 
+                Las campañas fueron llevadas a cabo a través de llamadas telefónicas, en las cuales se contactó a varios clientes con el objetivo de 
+                determinar si suscribirían o no a un depósito a plazo fijo (bank term deposit).
+            </div>
+            <br />
+            <div className="section-text">
+                Este conjunto de datos consta de <strong>45,211 registros</strong> y <strong>18 atributos</strong> al hacer el join, 
+                ya que la variable objetivo está en otro CSV. Cada registro representa a un cliente que fue contactado como parte de la campaña.
+            </div>
+            <br />
+            <h2 className="section-title">Objetivo</h2>
+            <br />
+            <div className="section-text">
+                El objetivo de este estudio es construir un modelo de clasificación que prediga si un cliente suscribirá (o no) 
+                a un depósito a plazo fijo, basándose en la información proporcionada durante las llamadas de la campaña. 
+                La variable objetivo, <strong>y</strong>, indica si el cliente ha aceptado (valor 'yes') o no (valor 'no') el depósito.
+            </div>
+            <br />
+            <h2 className="section-title">Variables</h2>
+            <br />
+            <div className="section-text">
+                Las principales características que se utilizarán para este análisis incluyen información demográfica de los clientes 
+                (como la edad, el estado civil y la ocupación), detalles financieros (como el saldo promedio en la cuenta) y datos 
+                específicos de la campaña (como el tipo de contacto y el número de veces que el cliente ha sido contactado anteriormente).
+            </div>
+            <br />
+            <ul>
+                <li>
+                    <strong className="list-title">Age:</strong> 
+                    <div className="list-text">Edad del cliente.</div>
+                </li>
+                <li>
+                    <strong className="list-title">Job:</strong> 
+                    <div className="list-text">Tipo de ocupación.</div>
+                </li>
+                <li>
+                    <strong className="list-title">Marital:</strong> 
+                    <div className="list-text">Estado civil.</div>
+                </li>
+                <li>
+                    <strong className="list-title">Balance:</strong> 
+                    <div className="list-text">Balance medio anual del cliente (en euros).</div>
+                </li>
+                <li>
+                    <strong className="list-title">Contact:</strong> 
+                    <div className="list-text">Medio de contacto (teléfono o celular).</div>
+                </li>
+                <li>
+                    <strong className="list-title">Poutcome:</strong> 
+                    <div className="list-text">Resultado de la campaña de marketing anterior.</div>
+                </li>
+            </ul>
+            <br />
+            <h2 className="section-title">Desafíos</h2>
+            <br />
+            <div className="section-text">
+                Algunos desafíos incluyen datos faltantes, conversión de variables categóricas a numéricas y el desbalance en las clases, 
+                ya que la mayoría de los clientes no suscriben.
+            </div>
+            <br />
+            <h2 className="section-title">Justificación del Caso de Estudio</h2>
+            <br />
+            <div className="section-text">
+                Este estudio es valioso porque permite aplicar técnicas de clasificación en datos reales, mejorando la efectividad de 
+                las campañas publicitarias al identificar a los clientes más propensos a aceptar la oferta.
+            </div>
+            <br />
+            <h2 className="section-title">Proceso en RapidMiner</h2>
+            <div className="section-text">
+                Luego de descargar el dataset de Kaggle, observamos que hay 2 archivos CSV: uno con los atributos regulares y otro con la variable objetivo, ambos relacionados por un ID numérico. Para trabajar con el dataset, uniremos estos archivos. Para ello, en la importación de los CSV, se le asigna el rol de ID al atributo ID en ambos archivos.
+            </div>
+            <br />
+            <img src="/images/c_e_1.png" alt="Asignación del rol de ID en el primer archivo CSV" className="example-image" />
+            <br />
+            <img src="/images/c_e_2.png" alt="Asignación del rol de ID en el segundo archivo CSV" className="example-image" />
+            <br />
+            <div className="section-text">
+                También establecemos la variable objetivo como "label" en el segundo archivo.
+            </div>
+            <br />
+            <img src="/images/c_e_3.png" alt="Estableciendo la variable objetivo como label en el segundo archivo" className="example-image" />
+            <br />
+            <div className="section-text">
+                Ya con los bloques de dichos archivos en RapidMiner, agregamos un operador "join" y utilizamos un "inner join". De esta manera, si en alguno de los archivos no coinciden los IDs, esos casos no serán incluidos (no es el caso de este ejemplo, donde coinciden perfectamente los IDs). También marcamos la casilla "use id attribute as key", que para ello fue que realizamos el paso anterior.
+            </div>
+            <br />
+            <img src="/images/c_e_4.png" alt="Uso del operador inner join en RapidMiner" className="example-image" />
+            <br />
+            <div className="section-text">
+                Podemos observar ahora el dataset con 18 columnas: 16 regulares y 2 especiales (ID y label), y 45,211 registros.
+            </div>
+            <br />
+            <img src="/images/c_e_5.png" alt="Vista final del dataset unido en RapidMiner" className="example-image" />
+
+            <div className="section-text">
+                Podemos observar en las estadísticas que hay 5,289 positivos de la variable objetivo y 39,922 negativos.
+            </div>
+            <br />
+            <img src="/images/c_e_6.png" alt="Estadísticas de la variable objetivo" className="example-image" />
+            <br />
+            <div className="section-text">
+                También podemos ver los atributos que tienen valores faltantes: 
+                <ul>
+                    <li>Poutcome: 36,959</li>
+                    <li>Contact: 13,020</li>
+                    <li>Education: 1,857</li>
+                    <li>Job: 288</li>
+                </ul>
+            </div>
+            <br />
+            <img src="/images/c_e_7.png" alt="Atributos con valores faltantes" className="example-image" />
+            <br />
+            <div className="section-text">
+                En cuanto a los valores faltantes, tomé las siguientes decisiones: 
+                para el atributo <strong>contact</strong>, elegí eliminarlo usando el bloque <em>Select Attributes</em> (imagen 8). 
+            </div>
+            <br />
+            <img src="/images/c_e_8.png" alt="Eliminación del atributo contact en RapidMiner" className="example-image" />
+            <br />
+            <div className="section-text">
+                Para el atributo <strong>education</strong>, decidí reemplazar los valores faltantes por el promedio (imagen 9). 
+            </div>
+            <br />
+            <img src="/images/c_e_9.png" alt="Reemplazo de valores faltantes en education por el promedio" className="example-image" />
+            <br />
+            <div className="section-text">
+                En cuanto a <strong>poutcome</strong>, me basé en la documentación y lo reemplacé por <em>'nonexistent'</em>, ya que este valor indica que no hubo un resultado previo de la campaña de marketing, lo cual es esencial para entender el contexto de los datos (imagen 10). 
+            </div>
+            <br />
+            <img src="/images/c_e_10.png" alt="Reemplazo de valores faltantes en poutcome por nonexistent" className="example-image" />
+            <br />
+            <div className="section-text">
+                Finalmente, como eran pocas las filas que tenían valores faltantes en <strong>job</strong>, decidí filtrarlas directamente (imagen 11). 
+            </div>
+            <br />
+            <img src="/images/c_e_11.png" alt="Filtrado de filas con valores faltantes en job" className="example-image" />
+            <br />
+            <div className="section-text">
+                Ahora podemos ver el dataset sin valores faltantes (imagen 12).
+            </div>
+            <br />
+            <img src="/images/c_e_12.png" alt="Dataset sin valores faltantes" className="example-image" />
+            <br />
+            <div className="section-text">
+                Ya con los datos pre-procesados, guardamos el proceso y creamos uno nuevo en donde volcaremos el recién guardado proceso. El algoritmo elegido es K-NN porque es sencillo de implementar, intuitivo y efectivo para problemas de clasificación como el nuestro, donde buscamos clasificar registros en dos categorías. Además, K-NN no hace suposiciones sobre la distribución de los datos, lo que lo hace versátil para diferentes tipos de conjuntos de datos.
+            </div>
+            <br />
+            <img src="/images/c_e_13.png" alt="Exclusión de atributos innecesarios" className="example-image" />
+            <br />
+            <div className="section-text">
+                Por lo tanto, algunos atributos no los vamos a necesitar, por ello los excluimos.
+            </div>
+            <br />
+            <img src="/images/c_e_14.png" alt="Conversión de atributos nominales a numéricos" className="example-image" />
+            <br />
+            <div className="section-text">
+                En línea con este algoritmo, convertimos atributos nominales a numéricos.
+            </div>
+            <br />
+            <img src="/images/c_e_15.png" alt="Normalización con Z-transformation" className="example-image" />
+            <br />
+            <div className="section-text">
+                Por último, normalizamos con z-transformation.
+            </div>
+            <br />
+            <img src="/images/c_e_16.png" alt="Separación de datos en training y test" className="example-image" />
+            <br />
+            <div className="section-text">
+                Luego, utilizaremos el bloque de split data para separar training de test, con una proporción de 70-30.
+            </div>
+            <br />
+            <img src="/images/c_e_17.png" alt="Configuración de K-NN con k=5" className="example-image" />
+            <br />
+            <div className="section-text">
+                Con el bloque de K-NN, asignamos k = 5 y vemos los resultados de la matriz de confusión con una exactitud de 88.83%.
+            </div>
+            <br />
+            <img src="/images/c_e_18.png" alt="Matriz de confusión con exactitud" className="example-image" />
+            <br />
+            <div className="section-text">
+                Probamos cambiando k = 10 y obtuvimos como resultado una exactitud de 89.15%.
+            </div>
+            <br />
+            <img src="/images/c_e_19.png" alt="Configuración de K-NN con k=10" className="example-image" />
+            <br />
+            <div className="section-text">
+                Este cambio en el parámetro \( k \) mejoró ligeramente la precisión del modelo, lo que indica que un mayor número de vecinos puede ayudar a suavizar las decisiones de clasificación en este conjunto de datos. Sin embargo, es importante considerar que aumentar \( k \) demasiado podría llevar a una pérdida de información relevante, especialmente en conjuntos de datos más complejos.
+            </div>
+            <br />
+            <img src="/images/c_e_20.png" alt="Matriz de confusión con exactitud" className="example-image" />
+            <br />
+            <div className="section-text">
+                En conclusión, el algoritmo K-NN se mostró efectivo para clasificar los datos, logrando una exactitud notable del 89.15% con \( k = 10 \). Este resultado sugiere que los datos están bien estructurados y que las características seleccionadas son relevantes para la tarea de clasificación. A pesar de que se podrían realizar más optimizaciones y pruebas con diferentes valores de \( k \) y técnicas de preprocesamiento, el rendimiento actual es prometedor y puede ser un buen punto de partida para análisis adicionales o implementación en entornos reales.
+            </div>
+        </Section>
 
     {/* Footer */}
     <Footer />
