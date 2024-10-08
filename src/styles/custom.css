@@ -1,0 +1,65 @@
+/* src/styles/custom.css */
+body {
+    padding-top: 56px; /* Ajuste para la barra de navegación fija */
+    scroll-padding-top: 80px;
+    
+  }
+  
+  h2 {
+    font-family: 'Merriweather', serif;
+    color: #4b2e1e;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: #8b4513;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Hover animation */
+  a:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+  }
+
+  section {
+    margin: 0; /* Elimina los márgenes entre secciones */
+    padding: 50px 0; /* Puedes ajustar este valor para reducir o aumentar el espacio interno */
+    background-color: #f5f5dc;
+  }
+  
+ /* styles.css */
+.section-title {
+    color: #4B2E1E; /* Color del título */
+    font-family: Georgia, serif; /* La misma fuente que el título */
+}
+
+.section-text {
+    margin-left: 20px;
+    color: #6F4C3E; /* Marrón medio para los párrafos */
+    font-family: Georgia, serif; /* Fuente para los párrafos */
+    line-height: 1.5; /* Espaciado para una mejor legibilidad */
+}
+
+.section-link {
+    color: #4B2E1E; /* Marrón oscuro para los enlaces */
+    font-family: Georgia, serif;
+    text-decoration: underline; /* Sin subrayado por defecto */
+}
+
+.list-title {
+    color: #4B2E1E; /* Color del título de la lista */
+    font-family: Georgia, serif; /* La misma fuente que el título */
+}
+
+.list-text {
+    margin-left: 20px;
+    color: #6F4C3E; /* Marrón medio para los elementos de la lista */
+    font-family: Georgia, serif; /* Fuente para los elementos de la lista */
+    line-height: 1.5; /* Espaciado para una mejor legibilidad */
+}
+.example-image {
+  width: 50%; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
