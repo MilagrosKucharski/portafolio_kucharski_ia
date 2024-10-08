@@ -5,6 +5,7 @@ import Section from '../components/section';
 import Footer from '../components/footer';
 import { motion } from 'framer-motion'; 
 import '../styles/custom.css';
+import missingValues1 from './images/missing_values_1.png';
 /*import missingValues1 from '../../public/images/missing_values_1.png';
 import missingValues2 from '../../public/images/missing_values_2.png';
 import missingValues3 from '../../public/images/missing_values_3.png';
@@ -31,12 +32,12 @@ const IndexPage = () => (
     <MyNavbar />
 
     {/* Sección animada de Introducción */}
-    <motion.div
+    {/*<motion.div
       initial={{ opacity: 0, y: 50 }}  // Animación de inicio (entra desde abajo y opaco)
       animate={{ opacity: 1, y: 0 }}   // Estado final (visibilidad completa)
       transition={{ duration: 0.5 }}   // Duración de la animación
-    >
-      <Section id="intro" title="Introducción a Machine Learning" isFirstSection={true}>
+    >*/}
+      <Section id="intro" title="Introducción a Machine Learning" >
         <h2 className="section-title">¿Qué es el Machine Learning?</h2>
         <br />
         <div className="section-text" >
@@ -263,7 +264,7 @@ const IndexPage = () => (
           </li>
       </ul>
       </Section>
-    </motion.div>
+    {/*</motion.div>*/}
 
     {/* Otras secciones sin animación */}
     <Section id="data" title="Tratamiento de Datos">
@@ -401,7 +402,7 @@ const IndexPage = () => (
           En total, hay 12 atributos en el dataset.
       </div>
       <br />
-      <img src="/images/missing_values_1.png" alt="Dataset del Titanic con atributos faltantes" class="example-image" />
+      <img src='../../public/images/missing_values_1.png' alt="Dataset del Titanic con atributos faltantes" class="example-image" />
       <br />
 
       <div class="list-text">
@@ -415,7 +416,7 @@ const IndexPage = () => (
           El atributo <strong>Age</strong> es importante para nuestro análisis, ya que podría ser útil para predecir la variable objetivo. Sin embargo, también tiene muchos valores faltantes, por lo que eliminarlo no es una opción ideal.
       </div>
       <br />
-      <img src="/images/missing_values_3.png" alt="Visualización del atributo 'Age' con valores faltantes" class="example-image" />
+      <img src={missingValues1} alt="Visualización del atributo 'Age' con valores faltantes" class="example-image" />
       <br />
 
       <div class="list-text">
@@ -452,7 +453,7 @@ const IndexPage = () => (
           Seleccionando el dataset <strong>Wine</strong> , observando las estadísticas de este, podemos ver que hay diferentes atributos numéricos pero en diferentes rangos y promedios.
       </div>
       <br />
-      <img src="/images/n_o_1.png" alt="Selección del dataset Wine" class="example-image" />
+      <img src="/src/images/n_o_1.png" alt="Selección del dataset Wine" class="example-image" />
       <br />
 
       <div class="list-text">
