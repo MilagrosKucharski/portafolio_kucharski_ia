@@ -5,22 +5,22 @@ import Section from '../components/section';
 import Footer from '../components/footer';
 import { motion } from 'framer-motion'; 
 import '../styles/custom.css';
-import missingValues1 from '../images/missing_values_1.png';
-import missingValues2 from '../images/missing_values_2.png';
-import missingValues3 from '../images/missing_values_3.png';
-import missingValues4 from '../images/missing_values_4.png';
-import missingValues5 from '../images/missing_values_5.png';
-import missingValues6 from '../images/missing_values_6.png';
-import missingValues7 from '../images/missing_values_7.png';
-import n_o_1 from '../images/n_o_1.png';
-import n_o_2 from '../images/n_o_2.png';
-import n_o_3 from '../images/n_o_3.png';
-import n_o_4 from '../images/n_o_4.png';
-import n_o_5 from '../images/n_o_5.png';
-import n_o_6 from '../images/n_o_6.png';
-import n_o_7 from '../images/n_o_7.png';
-import n_o_8 from '../images/n_o_8.png';
-import n_o_9 from '../images/n_o_9.png';
+/*import missingValues1 from '../../public/images/missing_values_1.png';
+import missingValues2 from '../../public/images/missing_values_2.png';
+import missingValues3 from '../../public/images/missing_values_3.png';
+import missingValues4 from '../../public/images/missing_values_4.png';
+import missingValues5 from '../../public/images/missing_values_5.png';
+import missingValues6 from '../../public/images/missing_values_6.png';
+import missingValues7 from '../../public/images/missing_values_7.png';
+import n_o_1 from '../../public/images/n_o_1.png';
+import n_o_2 from '../../public/images/n_o_2.png';
+import n_o_3 from '../../public/images/n_o_3.png';
+import n_o_4 from '../../public/images/n_o_4.png';
+import n_o_5 from '../../public/images/n_o_5.png';
+import n_o_6 from '../../public/images/n_o_6.png';
+import n_o_7 from '../../public/images/n_o_7.png';
+import n_o_8 from '../../../public/images/n_o_8.png';
+import n_o_9 from '/images/n_o_9.png';*/
 
 
 
@@ -401,49 +401,49 @@ const IndexPage = () => (
           En total, hay 12 atributos en el dataset.
       </div>
       <br />
-      <img src={missingValues1} alt="Dataset del Titanic con atributos faltantes" class="example-image" />
+      <img src="/images/missing_values_1.png" alt="Dataset del Titanic con atributos faltantes" class="example-image" />
       <br />
 
       <div class="list-text">
           Al observar que "Cabin" y "Life boat" tienen demasiados valores faltantes como para ser útiles en nuestro modelo, decidimos eliminarlos. Utilizamos el operador <strong>Select Attributes</strong> para eliminar estos atributos, dejando 10 atributos restantes.
       </div>
       <br />
-      <img src={missingValues2} alt="Selección de atributos eliminando 'Cabin' y 'Life boat'" class="example-image" />
+      <img src="/images/missing_values_2.png" alt="Selección de atributos eliminando 'Cabin' y 'Life boat'" class="example-image" />
       <br />
 
       <div class="list-text">
           El atributo <strong>Age</strong> es importante para nuestro análisis, ya que podría ser útil para predecir la variable objetivo. Sin embargo, también tiene muchos valores faltantes, por lo que eliminarlo no es una opción ideal.
       </div>
       <br />
-      <img src={missingValues3} alt="Visualización del atributo 'Age' con valores faltantes" class="example-image" />
+      <img src="/images/missing_values_3.png" alt="Visualización del atributo 'Age' con valores faltantes" class="example-image" />
       <br />
 
       <div class="list-text">
           Para solucionar este problema, utilizamos el operador <strong>Replace Missing Values</strong> y reemplazamos los valores faltantes de "Age" con la media de este atributo. De esta forma, mantenemos los datos del atributo "Age" sin necesidad de eliminar registros completos.
       </div>
       <br />
-      <img src={missingValues4} alt="Reemplazo de valores faltantes en 'Age' con la media" class="example-image" />
+      <img src="/images/missing_values_4.png" alt="Reemplazo de valores faltantes en 'Age' con la media" class="example-image" />
       <br />
 
       <div class="list-text">
           Ahora, solo quedan dos atributos con valores faltantes: uno con 2 valores faltantes y otro con solo 1. Dado que estos registros representan un número muy pequeño de datos, es prudente considerar eliminar estos 3 registros.
       </div>
       <br />
-      <img src={missingValues5} alt="Identificación de registros con pocos valores faltantes" class="example-image" />
+      <img src="/images/missing_values_5.png" alt="Identificación de registros con pocos valores faltantes" class="example-image" />
       <br />
 
       <div class="list-text">
           Para eliminar estos registros, utilizamos el operador <strong>Filter Examples</strong> con la condición de que no existan atributos faltantes. Esto nos permitirá filtrar los 3 registros restantes con datos faltantes.
       </div>
       <br />
-      <img src={missingValues6} alt="Filtrado de registros con atributos faltantes" class="example-image" />
+      <img src="/images/missing_values_6.png" alt="Filtrado de registros con atributos faltantes" class="example-image" />
       <br />
 
       <div class="list-text">
           Finalmente, observamos cómo nuestro dataset está ahora completamente limpio de valores faltantes, con los atributos necesarios y sin eliminar información importante .
       </div>
       <br />
-      <img src={missingValues7} alt="Dataset limpio sin valores faltantes" class="example-image" />
+      <img src="/images/missing_values_7.png" alt="Dataset limpio sin valores faltantes" class="example-image" />
       <br />
       <br />
       <h3 className="list-title" id="normalizacion-outliers">Ejemplo: Normalización y Detección de Outliers</h3>
@@ -452,14 +452,14 @@ const IndexPage = () => (
           Seleccionando el dataset <strong>Wine</strong> , observando las estadísticas de este, podemos ver que hay diferentes atributos numéricos pero en diferentes rangos y promedios.
       </div>
       <br />
-      <img src={n_o_1} alt="Selección del dataset Wine" class="example-image" />
+      <img src="/images/n_o_1.png" alt="Selección del dataset Wine" class="example-image" />
       <br />
 
       <div class="list-text">
           Por ejemplo, algunos atributos tienen valores que van de <strong>0.7 a 5.8</strong>, mientras que otros oscilan entre <strong>70 a 162</strong>.
       </div>
       <br />
-      <img src={n_o_2} alt="Rangos y promedios del dataset Wine" class="example-image" />
+      <img src="/images/n_o_2.png" alt="Rangos y promedios del dataset Wine" class="example-image" />
       <br />
 
       <div class="list-text">
@@ -471,14 +471,14 @@ const IndexPage = () => (
           Para lograr esta normalización, utilizamos el bloque <strong>Normalize</strong> con la opción <strong>Z-Transformation</strong>.
       </div>
       <br />
-      <img src={n_o_3} alt="Normalización con Z-Transformation" class="example-image" />
+      <img src="/images/n_o_3.png" alt="Normalización con Z-Transformation" class="example-image" />
       <br />
 
       <div class="list-text">
           Una vez normalizados, podemos observar que el promedio de los atributos es <strong>0</strong> y la varianza es <strong>1</strong>.
       </div>
       <br />
-      <img src={n_o_4} alt="Datos normalizados con promedio 0 y varianza 1" class="example-image" />
+      <img src="/images/n_o_4.png"alt="Datos normalizados con promedio 0 y varianza 1" class="example-image" />
       <br />
 
       <div class="list-text">
@@ -491,30 +491,30 @@ const IndexPage = () => (
           <li><span class="list-title">Función de distancia:</span> Euclidiana</li>
       </ul>
       <br />
-      <img src={n_o_5} alt="Detección de outliers con 10 vecinos y función de distancia Euclidiana" class="example-image" />
+      <img src="/images/n_o_5.png" alt="Detección de outliers con 10 vecinos y función de distancia Euclidiana" class="example-image" />
       <br />
 
       <div class="list-text">
           Esto nos genera un nuevo atributo llamado <strong>outlier</strong>, donde podemos observar que hay <strong>168</strong> registros que no son outliers y <strong>10</strong> que sí lo son.
       </div>
       <br />
-      <img src={n_o_6} alt="Atributo outlier indicando 168 no outliers y 10 outliers" class="example-image" />
+      <img src="/images/n_o_6.png" alt="Atributo outlier indicando 168 no outliers y 10 outliers" class="example-image" />
       <br />
 
       <div class="list-text">
           A continuación, queremos excluir estos 10 casos de nuestro dataset. Para ello, utilizamos el bloque <strong>Filter Examples</strong> y, con un filtro personalizado, seleccionamos <strong>outlier = false</strong>.
       </div>
       <br />
-      <img src={n_o_7} alt="Filtro personalizado para excluir outliers" class="example-image" />
+      <img src="/images/n_o_7.png" alt="Filtro personalizado para excluir outliers" class="example-image" />
       <br />
 
       <div class="list-text">
           Al ejecutar nuevamente el proceso, podemos ver que ahora contamos con <strong>168 registros</strong> en el dataset.
       </div>
       <br />
-      <img src={n_o_8} alt="Dataset reducido a 168 registros después de filtrar outliers" class="example-image" />
+      <img src="/images/n_o_8.png" alt="Dataset reducido a 168 registros después de filtrar outliers" class="example-image" />
       <br />
-      <img src={n_o_9} alt="Visualización final con 168 registros" class="example-image" />
+      <img src="/images/n_o_9.png" alt="Visualización final con 168 registros" class="example-image" />
       <br />
 
 
